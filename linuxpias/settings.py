@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'articulos',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,7 +72,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -85,4 +86,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+
+
+STATICFILES_DIRS = (
+os.path.join(os.path.dirname(__file__), '..', 'static').replace('\\','/'),
+)
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(__file__), '..', 'static1').replace('\\','/')
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '..', 'media').replace('\\','/')
+MEDIA_URL = '/media/'
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
