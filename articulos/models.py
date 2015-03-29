@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 
@@ -38,7 +39,7 @@ class Articulo(models.Model):
 		verbose_name_plural = "Articulos"
 
 	def __str__(self):
-		pass
+		return self.titulo
 
 	def save(self, *args, **kwargs):
 		if not self.id:
